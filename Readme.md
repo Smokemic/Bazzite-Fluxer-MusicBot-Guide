@@ -31,6 +31,7 @@ It covers all the struggles I ran into, so you don't have to.
 - **Google Cloud** account (for YouTube playback)
 - About **2-3 hours** of time and patience
 
+
 ## 🚀 Quick Start
 
 ### Option 1: Automated Installation (Recommended)
@@ -39,105 +40,110 @@ Run the installation script with a single command:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/Smokemic/Bazzite-Fluxer-MusicBot-Guide/main/installer/install.sh | bash
-
-
-
+```
 
 The script will:
+1. Check and install required packages (Python 3.11, Java 21, pulseaudio-libs)
+2. Create a Python virtual environment
+3. Install the Fluxer fork of Red-DiscordBot
+4. Set up an auto-restart systemd service
+5. Guide you through the remaining manual steps
 
-1.    Check and install required packages (Python 3.11, Java 21, pulseaudio-libs)
+### Option 2: Manual Installation
 
-2.    Create a Python virtual environment
+If you prefer to install step by step, follow the detailed guide in [docs/manual-installation.md](docs/manual-installation.md).
 
-3.   Install the Fluxer fork of Red-DiscordBot
 
-4.    Set up an auto-restart systemd service
 
-5.    Guide you through the remaining manual steps
-
-Option 2: Manual Installation
-
-If you prefer to install step by step, follow the detailed guide in docs/manual-installation.md.
-📖 Post-Installation Setup
+## 📖 Post-Installation Setup
 
 After running the installer, you need to complete these steps:
-1. Create a Bot Instance
-bash
 
+### 1. Create a Bot Instance
+
+```bash
 # Activate the virtual environment
 source ~/redenv/bin/activate
 
 # Run the setup tool
 redbot-setup
+```
 
-Follow the prompts to create your bot instance (e.g., name it fluxmusicbot).
-2. Start the Bot and Get Invite Link
-bash
+Follow the prompts to create your bot instance (e.g., name it `fluxmusicbot`).
 
+### 2. Start the Bot and Get Invite Link
+
+```bash
 redbot your-instance-name
+```
 
 Copy the invite URL shown in the console, paste it in your browser, and invite the bot to your Fluxer server.
-3. Load the Audio Cog
+
+### 3. Load the Audio Cog
 
 In any Discord channel where the bot is present, type:
-text
 
+```
 !load audio
+```
 
-4. Configure API Keys
-Spotify API
+### 4. Configure API Keys
 
-    Go to Spotify Developer Dashboard
+#### Spotify API
 
-    Create a new application
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new application
+3. Copy **Client ID** and **Client Secret**
+4. In Discord, run:
 
-    Copy Client ID and Client Secret
+```
+!set api spotify client_id YOUR_CLIENT_ID client_secret YOUR_CLIENT_SECRET
+```
 
-    In Discord, run:
-    text
+#### YouTube API
 
-    !set api spotify client_id YOUR_CLIENT_ID client_secret YOUR_CLIENT_SECRET
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project
+3. Enable **YouTube Data API v3**
+4. Create an **API Key** (choose "Public Data" – no OAuth needed!)
+5. In Discord, run:
 
-YouTube API
+```
+!set api youtube api_key YOUR_YOUTUBE_API_KEY
+```
 
-    Go to Google Cloud Console
-
-    Create a new project
-
-    Enable YouTube Data API v3
-
-    Create an API Key (choose "Public Data" – no OAuth needed!)
-
-    In Discord, run:
-    text
-
-    !set api youtube api_key YOUR_YOUTUBE_API_KEY
-
-🎮 Basic Commands
+## 🎮 Basic Commands
 
 Once everything is set up, you can start playing music:
-Command	Description
-!play <song name or URL>	Play a song from YouTube, Spotify, or direct link
-!pause	Pause current playback
-!resume	Resume paused playback
-!skip	Skip to next song in queue
-!queue	Show current song queue
-!volume <0-150>	Adjust volume
-!stop	Stop playback and clear queue
-!disconnect	Disconnect bot from voice channel
-🔧 Troubleshooting
-Common Issues and Solutions
-Problem	Solution
-502 Bad Gateway errors	Fluxer is experiencing downtime – wait and try again later
-libpulse.so.0 not found	Install pulseaudio-libs: rpm-ostree install pulseaudio-libs && reboot
-Bot doesn't join voice channel	Check bot permissions (need "Connect" and "Speak")
-Spotify URLs don't work	Verify Spotify API keys with !set api spotify
-YouTube playback fails	Check YouTube API key and quota limits
 
-For more detailed troubleshooting, see docs/troubleshooting.md.
-📁 Repository Structure
-text
+| Command | Description |
+|---------|-------------|
+| `!play <song name or URL>` | Play a song from YouTube, Spotify, or direct link |
+| `!pause` | Pause current playback |
+| `!resume` | Resume paused playback |
+| `!skip` | Skip to next song in queue |
+| `!queue` | Show current song queue |
+| `!volume <0-150>` | Adjust volume |
+| `!stop` | Stop playback and clear queue |
+| `!disconnect` | Disconnect bot from voice channel |
 
+## 🔧 Troubleshooting
+
+### Common Issues and Solutions
+
+| Problem | Solution |
+|---------|----------|
+| `502 Bad Gateway` errors | Fluxer is experiencing downtime – wait and try again later |
+| `libpulse.so.0 not found` | Install pulseaudio-libs: `rpm-ostree install pulseaudio-libs && reboot` |
+| Bot doesn't join voice channel | Check bot permissions (need "Connect" and "Speak") |
+| Spotify URLs don't work | Verify Spotify API keys with `!set api spotify` |
+| YouTube playback fails | Check YouTube API key and quota limits |
+
+For more detailed troubleshooting, see [docs/troubleshooting.md](docs/troubleshooting.md).
+
+## 📁 Repository Structure
+
+```
 bazzite-fluxer-musicbot-guide/
 ├── installer/
 │   └── install.sh          # Main installation script
@@ -150,44 +156,43 @@ bazzite-fluxer-musicbot-guide/
 │   └── faq.md                  # Frequently asked questions
 ├── README.md                # This file
 └── LICENSE                  # MIT License
+```
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome! If you have improvements, bug fixes, or additional documentation:
 
-    Fork the repository
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-improvement`)
+3. Commit your changes (`git commit -m 'Add amazing improvement'`)
+4. Push to the branch (`git push origin feature/amazing-improvement`)
+5. Open a Pull Request
 
-    Create a feature branch (git checkout -b feature/amazing-improvement)
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-    Commit your changes (git commit -m 'Add amazing improvement')
+## 📜 License
 
-    Push to the branch (git push origin feature/amazing-improvement)
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
-    Open a Pull Request
+## 🙏 Acknowledgments
 
-Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
-📜 License
+- The **Red-DiscordBot** team for the amazing bot framework
+- **Fluxer** for creating a Discord-compatible platform
+- **TrustyJAID** for the excellent cogs
+- **DeepSeek** for AI assistance throughout this guide
+- **Everyone in the Fluxer community** for testing and feedback
 
-This project is licensed under the MIT License – see the LICENSE file for details.
-🙏 Acknowledgments
+## 📬 Contact & Support
 
-    The Red-DiscordBot team for the amazing bot framework
+- **GitHub Issues**: For bug reports and feature requests
+- **Fluxer Community**: Join the conversation on Fluxer (channel: #bot-development)
+- **Discord**: (link to your Discord server if you have one)
 
-    Fluxer for creating a Discord-compatible platform
+---
 
-    TrustyJAID for the excellent cogs
+**Made with ❤️ for the Bazzite and Fluxer communities**  
+*From a noob who figured it out, to all noobs who will follow* 🚀
 
-    DeepSeek for AI assistance throughout this guide
 
-    Everyone in the Fluxer community for testing and feedback
 
-📬 Contact & Support
 
-    GitHub Issues: For bug reports and feature requests
-
-    Fluxer Community: Join the conversation on Fluxer (channel: #bot-development)
-
-    Discord: (link to your Discord server if you have one)
-
-Made with ❤️ for the Bazzite and Fluxer communities
-From a noob who figured it out, to all noobs who will follow 🚀
