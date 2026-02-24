@@ -4,6 +4,21 @@ This guide walks you through obtaining the necessary API keys for Spotify and Yo
 
 ## 🎵 Spotify API Keys
 
+> **🔴 Important (February 2026 Update)**  
+> Spotify has changed its API rules [citation:1]:  
+> - You **must have an active Spotify Premium subscription** to create and use API keys  
+> - Each developer can only have **one** Development Mode Client ID  
+> - Each app is limited to **5 authorized users** (for testing)  
+> - If your app grows beyond 5 users, you need to apply for Extended Quota Mode [citation:2]  
+>   
+> **For this bot:** Only YOU (the person setting it up) need Premium. Your listeners don't need Premium accounts.
+
+### Step 1: Create a Spotify Developer Application
+...
+
+
+## 🎵 Spotify API Keys
+
 ### Step 1: Create a Spotify Developer Application
 
 Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
