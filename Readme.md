@@ -228,7 +228,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 - **GitHub Issues**: For bug reports and feature requests
 - **Fluxer Community**: Join the conversation on Fluxer (channel: #bot-development)
-- **Discord**: (link to your Discord server if you have one)
+- **My Fluxer**: (link is incoming sadly Fluxer gets DDOS´d)
 
 ---
 
