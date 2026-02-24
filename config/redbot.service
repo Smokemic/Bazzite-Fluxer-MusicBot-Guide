@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 Environment=RED_DPY_DEBUG=1
-ExecStart=%h/redenv/bin/python -O -m redbot fluxmusicbot --no-prompt
+ExecStart=%h/redenv/bin/python -O -m redbot your-instance-name --no-prompt
 WorkingDirectory=%h/.local/share/redbot
 Restart=on-failure
 RestartSec=10
