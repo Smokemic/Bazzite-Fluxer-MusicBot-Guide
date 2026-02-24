@@ -10,7 +10,7 @@ Same as in the main README:
 - Bot token (from Fluxer/Discord developer portal)
 - About 2-3 hours patience
 - Google Account (Youtube API v3)
-- Spotify Premium Account für Bot erstellung
+- Spotify Premium Account für Api in Developer Section
 
 - 
 ## 🔧 Step 1: Install System Packages
