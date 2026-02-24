@@ -112,6 +112,48 @@ In any Discord channel where the bot is present, type:
 !set api youtube api_key YOUR_YOUTUBE_API_KEY
 ```
 
+### 5. Set up Auto-Restart Service
+
+The installer already created a service file for you, but you need to adjust it with your instance name:
+
+```bash
+# Edit the service file
+nano ~/.config/systemd/user/redbot.service
+```
+
+Find the line that starts with `ExecStart=` and replace `your-instance-name` with your actual instance name (e.g., `FluxMusicBot`).
+
+The file should look like this after editing:
+```ini
+[Unit]
+Description=Red Discord Bot (Fluxer)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=RED_DPY_DEBUG=1
+ExecStart=%h/redenv/bin/python -O -m redbot FluxMusicBot --no-prompt
+WorkingDirectory=%h/.local/share/redbot
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+```
+
+After saving, reload and enable the service:
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now redbot.service
+```
+
+Check if it's running:
+```bash
+systemctl --user status redbot.service
+```
+
+
 ## 🎮 Basic Commands
 
 Once everything is set up, you can start playing music:
