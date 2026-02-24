@@ -91,6 +91,10 @@ In any Discord channel where the bot is present, type:
 
 #### Spotify API
 
+### Do I need Spotify Premium for this bot?
+
+**Only the person setting up the bot needs Premium!** Since February 2026, Spotify requires a Premium subscription to create API credentials [citation:1]. However, the people listening to music in your Discord channel do NOT need Spotify accounts at all – they just hear the music playing.
+
 1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
 2. Create a new application
 3. Copy **Client ID** and **Client Secret**
