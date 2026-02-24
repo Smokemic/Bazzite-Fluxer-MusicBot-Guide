@@ -218,8 +218,8 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 ## 🙏 Acknowledgments
 
-- The **Red-DiscordBot** team for the amazing bot framework
-- **Fluxer** for creating a Discord-compatible platform
+- The **Red-Bot** team for the amazing bot framework specially @aikaterna for the Support and the push in the right direction, @Flame442, @Jackenmen, @Kowlin,@AAA3A-AAA3A,
+- **Fluxer** @Hampus for creating a awesome Discord-Alternative Open Source platform.
 - **TrustyJAID** for the excellent cogs
 - **DeepSeek** for AI assistance throughout this guide
 - **Everyone in the Fluxer community** for testing and feedback
@@ -227,7 +227,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 ## 📬 Contact & Support
 
 - **GitHub Issues**: For bug reports and feature requests
-- **Fluxer Community**: Join the conversation on Fluxer (channel: #bot-development)
+- **Fluxer Community**: Join the conversation on Fluxer (channel: #bot-development) also join RedBot on Fluxer
 - **My Fluxer**: (link is incoming sadly Fluxer gets DDOS´d)
 
 ---
